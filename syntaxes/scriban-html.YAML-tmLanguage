@@ -1,0 +1,15 @@
+name: Scriban-Html
+scopeName: text.html.scriban
+fileTypes: [scriban-html]
+uuid: 2A3B4DD2-561E-4662-A83B-8E3A15E26315
+
+patterns:
+- name: comment.block.scriban
+  begin: '{(%+){'
+  end: '}\1}'
+- name: language.script.scriban
+  begin: '{{~?'
+  end: '~?}}'
+  patterns:
+  - include: source.scriban
+- include: text.html.basic

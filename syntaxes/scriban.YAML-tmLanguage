@@ -1,0 +1,53 @@
+name: Scriban
+scopeName: source.scriban
+fileTypes: [scriban]
+uuid: f7870e1f-dfab-4130-91ba-22e786365910
+
+patterns:
+- include: '#comment'
+- include: '#keywords'
+- include: '#literals'
+
+repository:
+  comment:
+    patterns:
+    - name: comment.block.scriban
+      begin: '##'
+      end: '(?=}})|##'
+    - name: comment.line.scriban
+      begin: '(^\s+)?(?=#)'
+      end: '(?=~?}}|$)'
+  keywords:
+    name: keyword.type.scriban
+    match: \b(func|end|if|else|for|break|continue|in|while|capture|readonly|import|with|wrap|include|ret)\b
+  literals:
+    patterns:
+      - include: '#numeric-literal'
+      - include: '#string-literal'
+      - include: '#bool-literal'
+  bool-literal:
+    patterns:
+    - name: keyword.bool.scriban
+      match: \b(true|false)\b
+  numeric-literal:
+    patterns:
+    - name: constant.numeric.decimal.scriban
+      match: \b([0-9]+)?\.[0-9]+((e|E)[0-9]+)?\b
+    - name: constant.numeric.decimal.scriban
+      match: \b[0-9]+(e|E)[0-9]+\b
+    - name: constant.numeric.decimal.scriban
+      match: \b[0-9]+\b
+  string-literal:
+    patterns:
+    - name: string.quoted.double.scriban
+      begin: '(''|")'
+      end: '\1'
+      patterns:
+        - name: constant.character.escape.scriban
+          match: \\.
+    - name: string.quoted.double.scriban
+      begin: '`'
+      end: '`'
+      patterns:
+        - name: constant.character.escape.scriban
+          match: '``'

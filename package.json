@@ -1,0 +1,60 @@
+{
+    "name": "scriban",
+    "displayName": "Scriban",
+    "description": "Syntax Coloring for Scriban Text Templating Language",
+    "version": "1.0.0",
+    "publisher": "xoofx",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/lunet-io/scriban-vscode"
+    },
+    "bugs": {
+        "url": "https://github.com/lunet-io/scriban-vscode/issues"
+    },
+    "homepage": "https://github.com/lunet-io/scriban-vscode",
+    "keywords": [
+        "templating",
+        "liquid",
+        "mustache"
+    ],
+    "license": "BSD2-clause",
+    "engines": {
+        "vscode": "^1.5.0"
+    },
+    "categories": [
+        "Languages"
+    ],
+    "icon": "res/scriban_128.png",
+    "contributes": {
+        "languages": [
+            {
+                "id": "scriban",
+                "aliases": ["Scriban", "scriban"],
+                "extensions": [".scriban", ".sbn"],
+                "configuration": "./language-configuration.json"
+            },
+            {
+                "id": "scriban-html",
+                "aliases": ["Scriban-HTML", "scriban-html"],
+                "extensions": [".scriban-html", ".scriban-htm", ".sbn-html", ".sbn-htm", ".sbnhtml", ".sbnhtm"],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "scriban",
+                "scopeName": "source.scriban",
+                "path": "./syntaxes/scriban.tmLanguage"
+            },
+            {
+                "language": "scriban-html",
+                "scopeName": "text.html.scriban",
+                "path": "./syntaxes/scriban-html.tmLanguage",
+                "embeddedLanguages": {
+                    "text.html": "html",
+                    "source.scriban": "scriban"
+                }            
+            }
+        ]
+    }
+}
