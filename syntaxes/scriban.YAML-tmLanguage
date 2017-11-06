@@ -19,7 +19,7 @@ repository:
       end: '(?=~?}}|$)'
   keywords:
     name: keyword.type.scriban
-    match: \b(func|end|if|else|for|break|continue|in|while|capture|readonly|import|with|wrap|include|ret)\b
+    match: \b(func|end|if|else|for|break|continue|in|while|capture|readonly|import|with|wrap|include|ret|case|when|this|empty|tablerow)\b
   literals:
     patterns:
       - include: '#numeric-literal'

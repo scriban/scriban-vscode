@@ -62,7 +62,7 @@
 		<key>keywords</key>
 		<dict>
 			<key>match</key>
-			<string>\b(func|end|if|else|for|break|continue|in|while|capture|readonly|import|with|wrap|include|ret)\b</string>
+			<string>\b(func|end|if|else|for|break|continue|in|while|capture|readonly|import|with|wrap|include|ret|case|when|this|empty|tablerow)\b</string>
 			<key>name</key>
 			<string>keyword.type.scriban</string>
 		</dict>
