@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array>
+		<string>scriban-txt</string>
+	</array>
+	<key>name</key>
+	<string>Scriban-txt</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>begin</key>
+			<string>{(%+){</string>
+			<key>end</key>
+			<string>}\1}</string>
+			<key>name</key>
+			<string>comment.block.scriban</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>{{~?</string>
+			<key>end</key>
+			<string>~?}}</string>
+			<key>name</key>
+			<string>language.script.scriban</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>source.scriban</string>
+				</dict>
+			</array>
+		</dict>
+	</array>
+	<key>scopeName</key>
+	<string>text.scriban</string>
+	<key>uuid</key>
+	<string>46D6F82D-7128-47BF-987D-B9671D2F08AA</string>
+</dict>
+</plist>

@@ -6,17 +6,22 @@ This extension allows to colorize Scriban scripts and Scriban-Html scripts follo
 
 The syntax coloring supports two modes:
 
-- Plain **scriban scripts**, not embedded in HTML with the expected file extensions:
+- Plain **scriban script** (without using `{{` and `}}`) with the expected file extensions:
   - `.scriban`
   - `.sbn`
-- Mixed **scriban and HTML** with the expected file extensions:
+- Mixed **scriban and HTML** (using `{{` and `}}` to enter scriban) with the expected file extensions:
   - `.scriban-html`
   - `.scriban-htm`
   - `.sbn-html`
   - `.sbn-htm`
   - `.sbnhtml`
   - `.sbnhtm`
+- Mixed **scriban and text** (using `{{` and `}}` to enter scriban) with the expected file extensions:
+  - `.scriban-txt`
+  - `.sbn-txt`
+  - `.sbntxt`
 
-## 1.0.1
+## 1.1.0
 
-Add new keyword `this`, `when`, `case`, `empty`, `tablerow`
+- Fix closing/indentation of when/case
+- Add support for mixed scriban and `txt` files
