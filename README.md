@@ -17,6 +17,6 @@ The syntax coloring supports two modes:
   - `.sbnhtml`
   - `.sbnhtm`
 
-### 1.0.0
+## 1.0.1
 
-First release of this extension
+Add new keyword `this`, `when`, `case`, `empty`, `tablerow`

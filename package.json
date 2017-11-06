@@ -2,7 +2,7 @@
     "name": "scriban",
     "displayName": "Scriban",
     "description": "Syntax Coloring for Scriban Text Templating Language",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "publisher": "xoofx",
     "repository": {
         "type": "git",
