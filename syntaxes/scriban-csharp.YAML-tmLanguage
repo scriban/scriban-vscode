@@ -1,0 +1,15 @@
+name: Scriban-CSharp
+scopeName: source.cs.scriban
+fileTypes: [scriban-csharp]
+uuid: ADF7C6B9-65A4-4461-9A84-8C12AD20A84A
+
+patterns:
+- name: comment.block.scriban
+  begin: '{(%+){'
+  end: '}\1}'
+- name: language.script.scriban
+  begin: '{{~?'
+  end: '~?}}'
+  patterns:
+  - include: source.scriban
+- include: source.cs

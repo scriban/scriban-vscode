@@ -22,7 +22,7 @@
         "vscode": "^1.5.0"
     },
     "categories": [
-        "Languages"
+        "Programming Languages"
     ],
     "icon": "res/scriban_128.png",
     "contributes": {
@@ -41,8 +41,23 @@
             },
             {
                 "id": "scriban-html",
-                "aliases": ["Scriban Html", "scriban-html"],
-                "extensions": [".scriban-html", ".scriban-htm", ".sbn-html", ".sbn-htm", ".sbnhtml", ".sbnhtm"],
+                "aliases": ["Scriban Html"],
+                "extensions": [
+                        ".scriban-html", 
+                        ".scriban-htm", 
+                        ".sbn-html", 
+                        ".sbn-htm", 
+                        ".sbnhtml", 
+                        ".sbnhtm",
+                        ".html.scriban",
+                        ".html.sbn"
+                    ],
+                "configuration": "./language-configuration.json"
+            },
+            {
+                "id": "scriban-csharp",
+                "aliases": ["Scriban CSharp"],
+                "extensions": [".cs.scriban", ".cs.sbn"],
                 "configuration": "./language-configuration.json"
             }
         ],
@@ -63,6 +78,15 @@
                 "path": "./syntaxes/scriban-html.tmLanguage",
                 "embeddedLanguages": {
                     "text.html": "html",
+                    "source.scriban": "scriban"
+                }            
+            },
+            {
+                "language": "scriban-csharp",
+                "scopeName": "source.cs.scriban",
+                "path": "./syntaxes/scriban-csharp.tmLanguage",
+                "embeddedLanguages": {
+                    "source.cs": "C#",
                     "source.scriban": "scriban"
                 }            
             }
