@@ -1,0 +1,26 @@
+name: Scriban-txt
+scopeName: text.scriban
+fileTypes: [scriban-txt]
+uuid: 46D6F82D-7128-47BF-987D-B9671D2F08AA
+
+patterns:
+- name: comment.block.scriban
+  begin: '{(%+){[~\-]?'
+  end: '[~\-]?}\1}'
+  beginCaptures:
+    0: 
+      name: invalid
+  endCaptures:
+    0:
+      name: invalid
+- name: language.script.scriban
+  begin: '({{[~\-]?)'
+  end: '([~\-]?}})'
+  beginCaptures:
+    0: 
+      name: invalid
+  endCaptures:
+    0:
+      name: invalid
+  patterns:
+  - include: source.scriban

@@ -37,9 +37,9 @@
             <key>name</key>
             <string>comment.block.scriban</string>
             <key>begin</key>
-            <string>##</string>
+            <string>#(#+)</string>
             <key>end</key>
-            <string>(?=}})|##</string>
+            <string>(?=}})|#\1</string>
           </dict>
           <dict>
             <key>name</key>

@@ -12,8 +12,8 @@ repository:
   comment:
     patterns:
     - name: comment.block.scriban
-      begin: '##'
-      end: '(?=}})|##'
+      begin: '#(#+)'
+      end: '(?=}})|#\1'
     - name: comment.line.scriban
       begin: '(^\s+)?(?=#)'
       end: '(?=~?}}|$)'

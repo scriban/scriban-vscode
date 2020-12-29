@@ -2,7 +2,7 @@
     "name": "scriban",
     "displayName": "Scriban",
     "description": "Syntax Coloring for Scriban Text Templating Language",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "publisher": "xoofx",
     "repository": {
         "type": "git",
@@ -66,7 +66,7 @@
             {
                 "language": "scriban-csharp",
                 "scopeName": "source.cs.scriban",
-                "path": "./syntaxes/scriban-csharp.tmLanguage",
+                "path": "./syntaxes/scriban-csharp.tmLanguage"
             },          
             {
                 "language": "scriban-html",

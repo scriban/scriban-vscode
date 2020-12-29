@@ -5,16 +5,22 @@ uuid: 2A3B4DD2-561E-4662-A83B-8E3A15E26315
 
 patterns:
 - name: comment.block.scriban
-  begin: '{(%+){'
-  end: '}\1}'
+  begin: '{(%+){[~\-]?'
+  end: '[~\-]?}\1}'
+  beginCaptures:
+    0: 
+      name: invalid
+  endCaptures:
+    0:
+      name: invalid
 - name: language.script.scriban
   begin: '({{[~\-]?)'
   end: '([~\-]?}})'
   beginCaptures:
-    1: 
+    0: 
       name: invalid
   endCaptures:
-    1:
+    0:
       name: invalid
   patterns:
   - name: entity.name.function

@@ -2,6 +2,11 @@
 
 Scriban Syntax Coloring Extension for Visual Studio Code
 
+## 1.2.1
+
+- Add color for `{{` and `}}` in `txt` files.
+- Add color for comments`{%%{`/ `}%%}`
+
 ## 1.2.0
 
 - Add support for `cs`  Scriban files with `.sbncs`, `.sbn-cs`, `.scriban-cs` file extensions

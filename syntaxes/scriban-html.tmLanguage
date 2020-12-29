@@ -18,9 +18,25 @@
         <key>name</key>
         <string>comment.block.scriban</string>
         <key>begin</key>
-        <string>{(%+){</string>
+        <string>{(%+){[~\-]?</string>
         <key>end</key>
-        <string>}\1}</string>
+        <string>[~\-]?}\1}</string>
+        <key>beginCaptures</key>
+        <dict>
+          <key>0</key>
+          <dict>
+            <key>name</key>
+            <string>invalid</string>
+          </dict>
+        </dict>
+        <key>endCaptures</key>
+        <dict>
+          <key>0</key>
+          <dict>
+            <key>name</key>
+            <string>invalid</string>
+          </dict>
+        </dict>
       </dict>
       <dict>
         <key>name</key>
@@ -31,7 +47,7 @@
         <string>([~\-]?}})</string>
         <key>beginCaptures</key>
         <dict>
-          <key>1</key>
+          <key>0</key>
           <dict>
             <key>name</key>
             <string>invalid</string>
@@ -39,7 +55,7 @@
         </dict>
         <key>endCaptures</key>
         <dict>
-          <key>1</key>
+          <key>0</key>
           <dict>
             <key>name</key>
             <string>invalid</string>

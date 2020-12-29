@@ -129,14 +129,24 @@ patterns:
   name:  keyword.other.var.cs
 - match: \bwhere\b
   name:  keyword.other.where.cs
-- begin: '({{[~\-]?)'
+- name: comment.block.scriban
+  begin: '{(%+){[~\-]?'
+  end: '[~\-]?}\1}'
+  beginCaptures:
+    0: 
+      name: invalid
+  endCaptures:
+    0:
+      name: invalid
+- name: language.script.scriban
+  begin: '({{[~\-]?)'
   end: '([~\-]?}})'
   beginCaptures:
-    1: 
-      name: invalid.strong
+    0: 
+      name: invalid
   endCaptures:
-    1:
-      name: invalid.strong
+    0:
+      name: invalid  
   patterns:
   - name: entity.name.function
     match: \b(func|end|if|else|for|break|continue|in|while|capture|readonly|import|with|wrap|include|ret|case|when|this|empty|tablerow)\b
