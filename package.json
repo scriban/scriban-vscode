@@ -2,7 +2,7 @@
     "name": "scriban",
     "displayName": "Scriban",
     "description": "Syntax Coloring for Scriban Text Templating Language",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "publisher": "xoofx",
     "repository": {
         "type": "git",
@@ -40,6 +40,12 @@
                 "configuration": "./language-configuration.json"
             },
             {
+                "id": "scriban-csharp",
+                "aliases": ["Scriban CSharp"],
+                "extensions": [".scriban-cs", ".sbn-cs", ".sbncs"],
+                "configuration": "./language-configuration.json"
+            },            
+            {
                 "id": "scriban-html",
                 "aliases": ["Scriban Html", "scriban-html"],
                 "extensions": [".scriban-html", ".scriban-htm", ".sbn-html", ".sbn-htm", ".sbnhtml", ".sbnhtm"],
@@ -57,6 +63,11 @@
                 "scopeName": "text.scriban",
                 "path": "./syntaxes/scriban-txt.tmLanguage"
             },
+            {
+                "language": "scriban-csharp",
+                "scopeName": "source.cs.scriban",
+                "path": "./syntaxes/scriban-csharp.tmLanguage",
+            },          
             {
                 "language": "scriban-html",
                 "scopeName": "text.html.scriban",

@@ -20,8 +20,8 @@ The syntax coloring supports two modes:
   - `.scriban-txt`
   - `.sbn-txt`
   - `.sbntxt`
+- Mixed **scriban and C# files** (using `{{` and `}}` to enter scriban) with the expected file extensions:
+  - `.scriban-cs`
+  - `.sbn-cs`
+  - `.sbncs`  
 
-## 1.1.0
-
-- Fix closing/indentation of when/case
-- Add support for mixed scriban and `txt` files

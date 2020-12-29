@@ -1,0 +1,145 @@
+name: Scriban-CSharp
+scopeName: source.cs.scriban
+fileTypes: [scriban-csharp]
+uuid: 87b709df-3e98-466e-bbac-f437bde7ba35
+
+patterns:
+- include: 'source.cs#preprocessor'
+- include: 'source.cs#comment'
+- include: 'source.cs#literal'
+- include: 'source.cs#storage-modifier'
+- include: 'source.cs#type-builtin'
+- match: \b(namespace)\s+([\w\.]+)
+  captures:
+    1: { name: keyword }
+    2: { name: entity.name.type }
+- match: \b(using)\s+([\w\.]+)
+  captures:
+    1: { name: keyword.other.using }
+    2: { name: entity.name.type }
+- match: \b(class|struct|interface|enum)\s+(\w+)
+  captures:
+    1: { name: keyword }
+    2: { name: entity.name.type }
+- match: \bcase\b
+  name:  keyword.control.case.cs
+- match: \belse\b
+  name:  keyword.control.conditional.else.cs
+- match: \bif\b
+  name:  keyword.control.conditional.if.cs
+- match: \bdefault\b
+  name:  keyword.control.default.cs
+- match: \bbreak\b
+  name:  keyword.control.flow.break.cs
+- match: \bcontinue\b
+  name:  keyword.control.flow.continue.cs
+- match: \breturn\b
+  name:  keyword.control.flow.return.cs
+- match: \bthrow\b
+  name:  keyword.control.flow.throw.cs
+- match: \byield\b
+  name:  keyword.control.flow.yield.cs
+- match: \bgoto\b
+  name:  keyword.control.goto.cs
+- match: \bdo\b
+  name:  keyword.control.loop.do.cs
+- match: \bfor\b
+  name:  keyword.control.loop.for.cs
+- match: \bforeach\b
+  name:  keyword.control.loop.foreach.cs
+- match: \bin\b
+  name:  keyword.control.loop.in.cs
+- match: \bwhile\b
+  name:  keyword.control.loop.while.cs
+- match: \bswitch\b
+  name:  keyword.control.switch.cs
+- match: \bcatch\b
+  name:  keyword.control.try.catch.cs
+- match: \btry\b
+  name:  keyword.control.try.cs
+- match: \bfinally\b
+  name:  keyword.control.try.finally.cs
+- match: \bwhen\b
+  name:  keyword.control.try.when.cs
+- match: \badd\b
+  name:  keyword.other.add.cs,
+- match: \balias\b
+  name:  keyword.other.alias.cs
+- match: \bas\b
+  name:  keyword.other.as.cs
+- match: \bawait\b
+  name:  keyword.other.await.cs
+- match: \bawait\b
+  name:  keyword.other.await.cs,
+- match: \bbase\b
+  name:  keyword.other.base.cs
+- match: \bchecked\b
+  name:  keyword.other.checked.cs
+- match: \bclass\b
+  name:  keyword.other.class.cs
+- match: \bclass\b
+  name:  keyword.other.class.cs,
+- match: \bdefault\b
+  name:  keyword.other.default.cs
+- match: \bdelegate\b
+  name:  keyword.other.delegate.cs
+- match: \benum\b
+  name:  keyword.other.enum.cs
+- match: \bevent\b
+  name:  keyword.other.event.cs
+- match: \bexplicit\b
+  name:  keyword.other.explicit.cs
+- match: \bextern\b
+  name:  keyword.other.extern.cs
+- match: \bget\b
+  name:  keyword.other.get.cs,
+- match: \bimplicit\b
+  name:  keyword.other.implicit.cs
+- match: \binterface\b
+  name:  keyword.other.interface.cs
+- match: \bis\b
+  name:  keyword.other.is.cs
+- match: \block\b
+  name:  keyword.other.lock.cs
+- match: \bnameof\b
+  name:  keyword.other.nameof.cs
+#- match: \bnamespace\b
+#  name:  keyword.other.namespace.cs
+- match: \bnew\b
+  name:  keyword.other.new.cs
+- match: \bremove\b
+  name:  keyword.other.remove.cs,
+- match: \bset\b
+  name:  keyword.other.set.cs,
+- match: \bstatic\b
+  name:  keyword.other.static.cs
+- match: \bstruct\b
+  name:  keyword.other.struct.cs
+- match: \bstruct\b
+  name:  keyword.other.struct.cs,
+- match: \bthis\b
+  name:  keyword.other.this.cs
+- match: \btypeof\b
+  name:  keyword.other.typeof.cs
+- match: \bunchecked\b
+  name:  keyword.other.unchecked.cs
+- match: \busing\b
+  name:  keyword.other.using.cs
+- match: \bvar\b
+  name:  keyword.other.var.cs
+- match: \bwhere\b
+  name:  keyword.other.where.cs
+- begin: '({{[~\-]?)'
+  end: '([~\-]?}})'
+  beginCaptures:
+    1: 
+      name: invalid.strong
+  endCaptures:
+    1:
+      name: invalid.strong
+  patterns:
+  - name: entity.name.function
+    match: \b(func|end|if|else|for|break|continue|in|while|capture|readonly|import|with|wrap|include|ret|case|when|this|empty|tablerow)\b
+  - name: entity.name.function
+      match: \b(true|false)\b  
+  - include: source.scriban

@@ -8,8 +8,18 @@ patterns:
   begin: '{(%+){'
   end: '}\1}'
 - name: language.script.scriban
-  begin: '{{~?'
-  end: '~?}}'
+  begin: '({{[~\-]?)'
+  end: '([~\-]?}})'
+  beginCaptures:
+    1: 
+      name: invalid
+  endCaptures:
+    1:
+      name: invalid
   patterns:
+  - name: entity.name.function
+    match: \b(func|end|if|else|for|break|continue|in|while|capture|readonly|import|with|wrap|include|ret|case|when|this|empty|tablerow)\b
+  - name: entity.name.function
+      match: \b(true|false)\b   
   - include: source.scriban
 - include: text.html.basic
